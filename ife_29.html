@@ -1,0 +1,73 @@
+<html>
+<!DOCTYPE HTML>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>ife_task29</title>
+	<script>
+	function num_input(str)
+	{
+		if (str == null) {return 0;}
+		if (typeof str != "string"){str += "";}
+		return str.replace(/[^\x00-\xff]/g,"01").length;
+	}
+	function test()
+	{
+		str = inputtext.value
+		itslength = num_input(str)
+		if(itslength==0)
+		{
+			document.getElementById("note").innerHTML="名称不能为空";
+			var mynote= document.getElementById("theNote");
+			var mybox = document.getElementById("inputtext");
+			theNote.style.color = 'red';
+			inputtext.style.border = 'solid 1px red';
+			return false
+		}
+		else if(itslength<4)
+		{
+			document.getElementById("note").innerHTML="小于4个字符";
+			var mynote= document.getElementById("theNote");
+			var mybox = document.getElementById("inputtext");
+			theNote.style.color = 'red';
+			inputtext.style.border = 'solid 1px red';
+			return false
+		}
+		else if(itslength>16)
+		{
+			document.getElementById("note").innerHTML="大于16个字符";
+			var mynote= document.getElementById("theNote");
+			var mybox = document.getElementById("inputtext");
+			theNote.style.color = 'red';
+			inputtext.style.border = 'solid 1px red';
+			return false
+		}
+		else
+		{
+			document.getElementById("note").innerHTML="名称格式正确";
+			var mynote= document.getElementById("theNote");
+			var mybox = document.getElementById("inputtext");
+			theNote.style.color = 'green';
+			inputtext.style.border = 'solid 1px green';
+			return false
+		}
+	}
+
+	</script>
+	<style type="text/css">
+		#inputtext{border: solid 1px gray}
+		#theNote{color:gray}
+	</style>
+</head>
+<body>
+<div id="container">
+	<form id="form" action="" method="post">
+	<div id="名称"><label for="inputtext">名称</label></div>
+	<div id="boxText">
+		<div id="theBox"><input type="text" id="inputtext" cols="25" wrap="VIRTUAL"  style="font-size:17px;text-align:center;vertical-align:center;height:35px" /></div>
+		<div id="theNote"><p id="note">必填,长度为4~16个字符</p></div>
+	</div>
+	<div id="Sub"><input type="submit" value="验证" id="submit" onclick="return test()"/></div>
+	</form>
+</div>
+</body>
+</html>

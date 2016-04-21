@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>ife_task31</title>
+<script>
+	function in2()
+	{
+		document.getElementById("school1").style.display = "none";
+		document.getElementById("place").style.display = "block";
+	}
+	function in4()
+	{
+		document.getElementById("school1").style.display = "block";
+		document.getElementById("place").style.display = "none";
+	}
+	function beijing()
+	{
+		document.getElementById("bj").style.display = "block"
+		document.getElementById("sh").style.display = "none"
+	}
+	function shanghai()
+	{
+		document.getElementById("bj").style.display = "none"
+		document.getElementById("sh").style.display = "block"
+	}
+</script>
+</head>
+<body>
+<form>
+	<label for="001">在校生</label>
+  <input type="radio" name="radiobutton" id="001" onfocus="in4()" />
+  <label for="002">非在校生</label>
+  <input type="radio" name="radiobutton" id="002" onfocus="in2()" />
+	<br />
+	<div id="school1">
+	<form style="display:none">
+		学校
+		<select id="city">
+	    <option value="北京" onclick="beijing()">北京</option>
+	    <option value="上海" onclick="shanghai()">上海</option>
+	  </select>
+		<div id="bj" style="display:none">
+		<select>
+	    <option value="北京大学" >北京大学</option>
+	    <option value="清华大学" >清华大学</option>
+	    <option value="人民大学" >人民大学</option>
+	    <option value="其它" >其它</option>
+	  </select>
+		</div>
+		<div id="sh" style="display:none">
+		<select>
+	    <option value="复旦大学" >复旦大学</option>
+	    <option value="上海交通大学" >上海交通大学</option>
+	    <option value="上海科技大学" >上海科技大学</option>
+	    <option value="其它" >其它</option>
+	  </select>
+		</div>
+	</form>
+	</div>
+	<form id="place" style="display:none">
+		就业单位
+		<br />
+		<input type="text">
+	</form>
+</form>
+</body>
+</html>

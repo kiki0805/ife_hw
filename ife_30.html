@@ -1,0 +1,271 @@
+<html>
+<!DOCTYPE HTML>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>ife_task30</title>
+	<style type="text/css">
+		#inputtext1,#inputtext2,#inputtext3,#inputtext4,#inputtext5{border: solid 1px gray;}
+		#note1,#note2,#note3,#note4,#note5{color:gray;display: none}
+	</style>
+	<script>
+	function num_input(str)
+	{
+		if (str == null) {return 0;}
+		if (typeof str != "string"){str += "";}
+		return str.replace(/[^\x00-\xff]/g,"01").length;
+	}
+	function test1()
+	{
+		str = inputtext1.value
+		itslength = num_input(str)
+		if(itslength==0)
+		{
+			document.getElementById("note1").innerHTML="名称不能为空";
+			var mynote= document.getElementById("note1");
+			var mybox = document.getElementById("inputtext1");
+			mynote.style.color = 'red';
+			mybox.style.border = 'solid 1px red';
+			return false
+		}
+		else if(itslength<4)
+		{
+			document.getElementById("note1").innerHTML="小于4个字符";
+			var mynote= document.getElementById("note1");
+			var mybox = document.getElementById("inputtext1");
+			mynote.style.color = 'red';
+			mybox.style.border = 'solid 1px red';
+			return false
+		}
+		else if(itslength>16)
+		{
+			document.getElementById("note1").innerHTML="大于16个字符";
+			var mynote= document.getElementById("note1");
+			var mybox = document.getElementById("inputtext1");
+			mynote.style.color = 'red';
+			mybox.style.border = 'solid 1px red';
+			return false
+		}
+		else
+		{
+			document.getElementById("note1").innerHTML="格式正确";
+			var mynote= document.getElementById("note1");
+			var mybox = document.getElementById("inputtext1");
+			mynote.style.color = 'green';
+			mybox.style.border = 'solid 1px green';
+			return 1
+		}
+	}
+	function test2()
+	{
+		str = inputtext2.value
+		itslength = num_input(str)
+		if(itslength==0)
+		{
+			document.getElementById("note2").innerHTML="名称不能为空";
+			var mynote2 = document.getElementById("note2");
+			var mybox2 = document.getElementById("inputtext2");
+			mynote2.style.color = 'red';
+			mybox2.style.border = 'solid 1px red';
+			return false
+		}
+		else if(itslength<4)
+		{
+			document.getElementById("note2").innerHTML="小于4个字符";
+			var mynote2= document.getElementById("note2");
+			var mybox2 = document.getElementById("inputtext2");
+			mynote2.style.color = 'red';
+			mybox2.style.border = 'solid 1px red';
+			return false
+		}
+		else if(itslength>16)
+		{
+			document.getElementById("note2").innerHTML="大于16个字符";
+			var mynote2= document.getElementById("note2");
+			var mybox2 = document.getElementById("inputtext2");
+			mynote2.style.color = 'red';
+			mybox2.style.border = 'solid 1px red';
+			return false
+		}
+		else
+		{
+			document.getElementById("note2").innerHTML="格式正确";
+			var mynote2= document.getElementById("note2");
+			var mybox2 = document.getElementById("inputtext2");
+			mynote2.style.color = 'green';
+			mybox2.style.border = 'solid 1px green';
+			return 1
+		}
+	}
+	function test3()
+	{
+		str1 = inputtext2.value
+		str2 = inputtext3.value
+		if(str1 == str2)
+		{
+			document.getElementById("note3").innerHTML="格式正确";
+			var mynote3= document.getElementById("note3");
+			var mybox3 = document.getElementById("inputtext3");
+			mynote3.style.color = 'green';
+			mybox3.style.border = 'solid 1px green';
+			return 1
+		}
+		else
+		{
+			document.getElementById("note3").innerHTML="两次输入不一致";
+			var mynote3= document.getElementById("note3");
+			var mybox3 = document.getElementById("inputtext3");
+			mynote3.style.color = 'red';
+			mybox3.style.border = 'solid 1px red';
+			return false
+		}
+	}
+	function test4()
+	{
+		if(inputtext4.value.search('@')==-1)
+		{
+			document.getElementById("note4").innerHTML="格式错误";
+			var mynote4= document.getElementById("note4");
+			var mybox4 = document.getElementById("inputtext4");
+			mynote4.style.color = 'red';
+			mybox4.style.border = 'solid 1px red';
+			return false
+		}
+		else if(inputtext4.value.search('@')==0)
+		{
+			document.getElementById("note4").innerHTML="格式错误";
+			var mynote4= document.getElementById("note4");
+			var mybox4 = document.getElementById("inputtext4");
+			mynote4.style.color = 'red';
+			mybox4.style.border = 'solid 1px red';
+			return false
+		}
+		else
+		{
+			document.getElementById("note4").innerHTML="格式正确";
+			var mynote4= document.getElementById("note4");
+			var mybox4 = document.getElementById("inputtext4");
+			mynote4.style.color = 'green';
+			mybox4.style.border = 'solid 1px green';
+			return 1
+		}
+	}
+	function test5()
+	{
+		str = inputtext5.value
+		itslength = num_input(str)
+		if(itslength!=11)
+		{
+			document.getElementById("note5").innerHTML="格式错误";
+			var mynote5= document.getElementById("note5");
+			var mybox5 = document.getElementById("inputtext5");
+			mynote5.style.color = 'red';
+			mybox5.style.border = 'solid 1px red';
+			return false
+		}
+		else {
+			document.getElementById("note5").innerHTML="格式正确";
+			var mynote5= document.getElementById("note5");
+			var mybox5 = document.getElementById("inputtext5");
+			mynote5.style.color = 'green';
+			mybox5.style.border = 'solid 1px green';
+			return 1
+		}
+	}
+	function show1()
+	{
+		var mychar = document.getElementById("note1");
+    mychar.style.display = "block";
+	}
+	function hide1()
+	{
+		document.getElementById("note1").style.display = "none";
+	}
+	function show2()
+	{
+		var mychar = document.getElementById("note2");
+    mychar.style.display = "block";
+	}
+	function hide2()
+	{
+		document.getElementById("note2").style.display = "none";
+	}
+	function show3()
+	{
+		var mychar = document.getElementById("note3");
+    mychar.style.display = "block";
+	}
+	function hide3()
+	{
+		document.getElementById("note3").style.display = "none";
+	}
+	function show4()
+	{
+		var mychar = document.getElementById("note4");
+    mychar.style.display = "block";
+	}
+	function hide4()
+	{
+		document.getElementById("note4").style.display = "none";
+	}
+	function show5()
+	{
+		var mychar = document.getElementById("note5");
+    mychar.style.display = "block";
+	}
+	function hide5()
+	{
+		document.getElementById("note5").style.display = "none";
+	}
+	function supertest()
+	{
+		if(test1()){if(test2()){if(test3()){if(test4()){if(test5()){alert("提交成功")}}}}}
+		else{alert("提交失败")}
+	}
+	ctrlDis2()
+	</script>
+</head>
+<body>
+<div id="container">
+	<form action="" method="post">
+	<div style="float:left;margin:10px"><label for="inputtext">名称</label></div>
+	<div class="boxText" style="float:left">
+		<div><input type="text" id="inputtext1" onblur="test1();hide1()" onfocus="show1()" style="font-size:17px;text-align:center;vertical-align:center;height:35px" /></div>
+		<div><p id="note1">必填,长度为4~16个字符</p></div>
+	</div>
+	<div style="float:left;margin:3px 10px"><input type="submit" value="验证" onclick="return supertest()"/></div>
+	</form>
+	<form action="" method="post" style="display:block;float:left">
+	<div style="float:left;margin:10px"><label for="inputtext">密码</label></div>
+	<div style="float:left">
+		<div><input type="text" id="inputtext2" onblur="test2();hide2()" onfocus="show2()" style="font-size:17px;text-align:center;vertical-align:center;height:35px" /></div>
+		<div><p id="note2">必填,长度为4~16个字符</p></div>
+	</div>
+	<div style="float:left;margin:3px 10px"><input type="submit" value="验证" onclick="return supertest()"/></div>
+	</form>
+	<form action="" method="post" style="display:block;float:left">
+	<div style="float:left;margin:10px"><label for="inputtext">密码确认</label></div>
+	<div style="float:left">
+		<div><input type="text" id="inputtext3" onblur="test3();hide3()" onfocus="show3()" style="font-size:17px;text-align:center;vertical-align:center;height:35px" /></div>
+		<div><p id="note3">必填,长度为4~16个字符</p></div>
+	</div>
+	<div style="float:left;margin:3px 10px"><input type="submit" value="验证" onclick="return supertest()"/></div>
+	</form>
+	<form action="" method="post" style="display:block;float:left">
+	<div style="float:left;margin:10px"><label for="inputtext">邮箱</label></div>
+	<div style="float:left">
+		<div><input type="text" id="inputtext4" onblur="test4();hide4()" onfocus="show4()" style="font-size:17px;text-align:center;vertical-align:center;height:35px" /></div>
+		<div><p id="note4">xxx@xxx</p></div>
+	</div>
+	<div style="float:left;margin:3px 10px"><input type="submit" value="验证" onclick="return supertest()"/></div>
+	</form>
+	<form action="" method="post" style="display:block;float:left">
+	<div style="float:left;margin:10px"><label for="inputtext">手机</label></div>
+	<div style="float:left">
+		<div><input type="text" id="inputtext5" onblur="test5();hide5()" onfocus="show5()" style="font-size:17px;text-align:center;vertical-align:center;height:35px" /></div>
+		<div><p id="note5">长度为11</p></div>
+	</div>
+	<div style="float:left;margin:3px 10px"><input type="submit" value="验证" onclick="return supertest()"/></div>
+	</form>
+</div>
+</body>
+</html>
